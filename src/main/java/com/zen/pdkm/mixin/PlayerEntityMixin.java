@@ -22,14 +22,14 @@ public abstract class PlayerEntityMixin {
         PlayerEntity thisObject = (PlayerEntity) (Object) this;
         if (!thisObject.getWorld().isClient() && source.getAttacker() instanceof LivingEntity attacker && attacker.isPlayer()) {
             if (!StateSaverAndLoader.getPlayerState(attacker).pvp) {
-                System.out.println("Attacker doesn't have pvp on");
                 cir.setReturnValue(false);
                 return;
             }
             if (!StateSaverAndLoader.getPlayerState(thisObject).pvp) {
-                System.out.println("Victim doesn't have pvp on");
                 cir.setReturnValue(false);
+                return;
             }
+            StateSaverAndLoader.getPlayerState(attacker).pvpTicks = 6000;
         }
     }
 

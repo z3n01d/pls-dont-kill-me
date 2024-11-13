@@ -14,4 +14,4 @@ Just use the `/plsdontkillme` command to toggle friendly fire on or off.
 
 ### Installation
 Drop the jar file into your server's/client's mod folder.
-> Note: Client doesn't need to have the mod installed to join a server with this mod
+> Note: Clients don't need to install the mod to join a server with this mod

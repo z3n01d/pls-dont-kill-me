@@ -8,8 +8,8 @@
 		"Zen"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/z3n01d/pls-dont-kill-me",
+		"issues": "https://github.com/z3n01d/pls-dont-kill-me/issues"
 	},
 	"license": "AGPL-3.0-or-later",
 	"icon": "assets/pls-dont-kill-me/icon.png",
