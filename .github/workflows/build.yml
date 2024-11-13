@@ -4,10 +4,29 @@ on: [ workflow_dispatch ]
 
 jobs:
   build:
-    # ...
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - name: Check Environment Variables
+        run: env
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 17
+
+      - name: Make Gradle Wrapper Executable
+        if: ${{ runner.os != 'Windows' }}
+        run: chmod +x ./gradlew
+
+      - name: Build
+        run: ./gradlew clean build
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
           # Only include this section if you wish to publish
